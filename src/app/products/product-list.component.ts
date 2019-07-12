@@ -4,7 +4,7 @@ import { IProduct } from './product';
 @Component({
     selector:'pm-products',
     templateUrl:'./product-list.component.html',
-    styleUrls:['./bootstrap.min.css'],    
+    styleUrls:['./product-list.component.css']  
 })
 
 export class ProductListComponent {
@@ -49,6 +49,10 @@ export class ProductListComponent {
     constructor(){
         this.filteredProducts = this.products;
         this.listFilter = 'cart';
+    }
+
+    onRatingClicked(message:string):void {
+        this.pageTitle = 'Product List ' + message;
     }
 
     performFilter(filterBy : string): IProduct[] {
